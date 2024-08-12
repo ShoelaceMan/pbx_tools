@@ -1,0 +1,4 @@
+#!/bin/sh
+fwconsole bi --type='extensions' /usr/local/bin/remoteManager/extensions.csv
+fwconsole reload
+

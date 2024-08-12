@@ -1,0 +1,4 @@
+#!/bin/sh
+
+mysqldump -uroot -pe7b9be22451c74cc3ed806c638dc5cc7 --all-databases > /var/log/databaseDump/dbbackup 2>/dev/null
+gzip /var/log/databaseDump/dbbackup

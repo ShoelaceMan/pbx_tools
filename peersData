@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/local/bin/peers > /tmp/peers.csv

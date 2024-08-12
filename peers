@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/sbin/asterisk -rx 'sip show peers' | egrep 'OK|UNKNOWN|UNREACHABLE|Unmonitored' | grep -v Unmonitored: | /usr/bin/cut -c-39,104- | /bin/sed -e 's/(//g' | /bin/sed -e 's/)//g'

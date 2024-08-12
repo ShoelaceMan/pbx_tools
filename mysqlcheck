@@ -1,0 +1,12 @@
+#!/bin/bash
+email='events@stratustalk.com'
+subject='mysql process down and up'
+MYSQL_START='sudo service mysql start'
+MYSQL='mysqld'
+PGREP='/usr/bin/pgrep'
+HOSTNAME=$(uname -n)
+#check pid
+$PGREP $MYSQL
+if [ $? -ne 0 ]; then
+	$MYSQL_START | mail -s "$HOSTNAME $subject" $email <<< 'MySQL service was down and successfully started'
+fi

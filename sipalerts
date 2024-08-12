@@ -1,0 +1,2 @@
+#!/bin/sh
+tail -5000 /var/log/asterisk/full | fgrep `date +%Y-%m-%d` | fgrep Peer | cut -f6 -d' ' | sort | uniq -c | awk '{printf"Peer %s: %s\n", $2, $1}'
